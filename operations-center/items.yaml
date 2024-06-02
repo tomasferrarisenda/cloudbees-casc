@@ -34,9 +34,9 @@ items:
       optIn: true
   - healthReporting:
       enabled: true
-  - optOutProperty:
-      securityEnforcerOptOutMode:
-        optOutAll: {}
+  # - optOutProperty:
+  #     securityEnforcerOptOutMode:
+  #       optOutAll: {}
   - owner:
       delay: 5
       owners: ''
@@ -76,9 +76,9 @@ items:
       optIn: true
   - healthReporting:
       enabled: true
-  - optOutProperty:
-      securityEnforcerOptOutMode:
-        optOutAll: {}
+  # - optOutProperty:
+  #     securityEnforcerOptOutMode:
+  #       optOutAll: {}
   - owner:
       delay: 5
       owners: ''
@@ -118,9 +118,9 @@ items:
       optIn: true
   - healthReporting:
       enabled: true
-  - optOutProperty:
-      securityEnforcerOptOutMode:
-        optOutAll: {}      
+  # - optOutProperty:
+  #     securityEnforcerOptOutMode:
+  #       optOutAll: {}      
   - owner:
       delay: 5
       owners: ''
@@ -160,9 +160,9 @@ items:
       optIn: true
   - healthReporting:
       enabled: true
-  - optOutProperty:
-      securityEnforcerOptOutMode:
-        optOutAll: {}
+  # - optOutProperty:
+  #     securityEnforcerOptOutMode:
+  #       optOutAll: {}
   - owner:
       delay: 5
       owners: ''
