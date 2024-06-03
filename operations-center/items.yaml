@@ -16,7 +16,7 @@ items:
       livenessInitialDelaySeconds: 300
       readinessInitialDelaySeconds: 30
       clusterEndpointId: default
-      disk: 5
+      disk: 2
       readinessFailureThreshold: 100
       livenessTimeoutSeconds: 10
       domain: exercise
@@ -142,7 +142,7 @@ items:
       livenessInitialDelaySeconds: 300
       readinessInitialDelaySeconds: 30
       clusterEndpointId: default
-      disk: 5
+      disk: 2
       readinessFailureThreshold: 100
       livenessTimeoutSeconds: 10
       domain: invincible-gtg
