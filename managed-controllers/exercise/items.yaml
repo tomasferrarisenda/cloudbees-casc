@@ -1,3 +1,77 @@
 removeStrategy:
-  rbac: SYNC
-  items: NONE
+  items: "none"
+  rbac: "sync"
+
+items:
+  - kind: cloudbeesTemplatedJob
+    catalog: pipeline-template-catalog-container
+    name: frontend
+    model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
+    attributes:
+    - type: credentials
+      value: github
+      key: github_creds
+    - type: string
+      value: frontend
+      key: name
+    - type: string
+      value: Dockerfile
+      key: dockerfiles
+    - type: string
+      value: tferrari92
+      key: docker_username
+    - type: string
+      value: frontend-service
+      key: github_repo
+    - type: string
+      value: tomasferrarisenda
+      key: github_organization
+  - kind: cloudbeesTemplatedJob
+    catalog: pipeline-template-catalog-container
+    name: api-gradle
+    model: pipeline-tem.lhjqlj.og-container/gradle-docker-build-deploy
+    attributes:
+    - type: boolean
+      value: true
+      key: run_tests
+    - type: credentials
+      value: github
+      key: github_creds
+    - type: string
+      value: api-gradle
+      key: name
+    - type: string
+      value: Dockerfile
+      key: dockerfiles
+    - type: string
+      value: tferrari92
+      key: docker_username
+    - type: string
+      value: api-gradle-service
+      key: github_repo
+    - type: string
+      value: tomasferrarisenda
+      key: github_organization
+  - kind: cloudbeesTemplatedJob
+    catalog: pipeline-template-catalog-container
+    name: mariadb
+    model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
+    attributes:
+    - type: credentials
+      value: github
+      key: github_creds
+    - type: string
+      value: mariadb
+      key: name
+    - type: string
+      value: Dockerfile
+      key: dockerfiles
+    - type: string
+      value: tferrari92
+      key: docker_username
+    - type: string
+      value: mariadb-service
+      key: github_repo
+    - type: string
+      value: tomasferrarisenda
+      key: github_organization
