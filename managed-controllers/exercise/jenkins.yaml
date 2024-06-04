@@ -77,25 +77,25 @@ beekeeper:
   upgrades:
     autoDowngradePlugins: false
     autoUpgradePlugins: true
-globalCloudBeesPipelineTemplateCatalog:
-  catalogs:
-  - branchOrTag: "main"
-    scm:
-      github:
-        configuredByUrl: true
-        credentialsId: "github"
-        id: "0f2c6bda-7121-4285-9269-d31aa385f23d"
-        repoOwner: "tomasferrarisenda"
-        repository: "pipeline-template-catalogs"
-        repositoryUrl: "https://github.com/tomasferrarisenda/pipeline-template-catalogs"
-        traits:
-        - gitHubBranchDiscovery:
-            strategyId: 1
-        - gitHubPullRequestDiscovery:
-            strategyId: 2
-        - gitHubForkDiscovery:
-            strategyId: 2
-            trust: "gitHubTrustPermissions"
+# globalCloudBeesPipelineTemplateCatalog:
+#   catalogs:
+#   - branchOrTag: "main"
+#     scm:
+#       github:
+#         configuredByUrl: true
+#         credentialsId: "github"
+#         id: "0f2c6bda-7121-4285-9269-d31aa385f23d"
+#         repoOwner: "tomasferrarisenda"
+#         repository: "pipeline-template-catalogs"
+#         repositoryUrl: "https://github.com/tomasferrarisenda/pipeline-template-catalogs"
+#         traits:
+#         - gitHubBranchDiscovery:
+#             strategyId: 1
+#         - gitHubPullRequestDiscovery:
+#             strategyId: 2
+#         - gitHubForkDiscovery:
+#             strategyId: 2
+#             trust: "gitHubTrustPermissions"
 # license:
 #   certificate: |
 #     -----BEGIN CERTIFICATE-----
@@ -371,6 +371,8 @@ support:
   automatedBundleConfiguration:
     componentIds:
     - "CloudBeesAssuranceSupport"
+    - "CascScmRetrieverSupport"
+    - "CloudBeesCasCUpdateLogBundlesSupport"
     - "AgentsConfigFile"
     - "ConfigFileComponent"
     - "OtherConfigFilesComponent"
@@ -460,23 +462,23 @@ unclassified:
     autoPollingIntervalSeconds: 10
     enabled: true
     searchMaxIndexSize: 1000
-  email-ext:
-    adminRequiredForTemplateTesting: false
-    allowUnregisteredEnabled: false
-    charset: "UTF-8"
-    debugMode: false
-    defaultBody: |-
-      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+  # email-ext:
+  #   adminRequiredForTemplateTesting: false
+  #   allowUnregisteredEnabled: false
+  #   charset: "UTF-8"
+  #   debugMode: false
+  #   defaultBody: |-
+  #     $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
 
-      Check console output at $BUILD_URL to view the results.
-    defaultContentType: "text/plain"
-    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
-    defaultTriggerIds:
-    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
-    maxAttachmentSize: -1
-    maxAttachmentSizeMb: -1
-    precedenceBulk: false
-    watchingEnabled: false
+  #     Check console output at $BUILD_URL to view the results.
+  #   defaultContentType: "text/plain"
+  #   defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+  #   defaultTriggerIds:
+  #   - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+  #   maxAttachmentSize: -1
+  #   maxAttachmentSizeMb: -1
+  #   precedenceBulk: false
+  #   watchingEnabled: false
   enrichedSummaryConfig:
     enrichedSummaryEnabled: false
     httpClientDelayBetweenRetriesInSeconds: 1
@@ -491,28 +493,28 @@ unclassified:
     apiRateLimitChecker: ThrottleForNormalize
   gitHubPluginConfig:
     hookUrl: "http://cloudbees-core.local/exercise/github-webhook/"
-  globalLibraries:
-    libraries:
-    - defaultVersion: "main"
-      name: "global-shared-library"
-      retriever:
-        modernSCM:
-          scm:
-            github:
-              configuredByUrl: true
-              credentialsId: "github"
-              id: "c5a3ef29-bd42-4110-97c0-faa532af444f"
-              repoOwner: "tomasferrarisenda"
-              repository: "global-shared-library"
-              repositoryUrl: "https://github.com/tomasferrarisenda/global-shared-library"
-              traits:
-              - gitHubBranchDiscovery:
-                  strategyId: 1
-              - gitHubPullRequestDiscovery:
-                  strategyId: 2
-              - gitHubForkDiscovery:
-                  strategyId: 2
-                  trust: "gitHubTrustPermissions"
+  # globalLibraries:
+  #   libraries:
+  #   - defaultVersion: "main"
+  #     name: "global-shared-library"
+  #     retriever:
+  #       modernSCM:
+  #         scm:
+  #           github:
+  #             configuredByUrl: true
+  #             credentialsId: "github"
+  #             id: "c5a3ef29-bd42-4110-97c0-faa532af444f"
+  #             repoOwner: "tomasferrarisenda"
+  #             repository: "global-shared-library"
+  #             repositoryUrl: "https://github.com/tomasferrarisenda/global-shared-library"
+  #             traits:
+  #             - gitHubBranchDiscovery:
+  #                 strategyId: 1
+  #             - gitHubPullRequestDiscovery:
+  #                 strategyId: 2
+  #             - gitHubForkDiscovery:
+  #                 strategyId: 2
+  #                 trust: "gitHubTrustPermissions"
   injectionConfig:
     allowUntrusted: false
     checkForBuildAgentErrors: false
