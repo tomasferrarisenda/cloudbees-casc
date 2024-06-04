@@ -44,7 +44,7 @@ plugins:
 - id: credentials-binding
 - id: display-url-api
 - id: durable-task
-- id: echarts-api
+# - id: echarts-api
 # - id: email-ext
 - id: font-awesome-api
 - id: git

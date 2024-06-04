@@ -221,152 +221,152 @@ beekeeper:
   #   Mo4jVNU+UQMZDZs4uhzhwgOj4ZVLkJRySWdblKzVQDq2qz0WJbgGUrmlmZzTI54k
   #   G06W6RWfeK3viHw50UVbkNpZr2JQwyEjOYpyX4/Kz0prSCNRMZlfNao=
   #   -----END RSA PRIVATE KEY-----
-kube:
-  podTemplatesConfiguration:
-    templates:
-    - id: "d7db6e35-f17d-4d01-8822-896025a528a8"
-      label: "dockerContainerBuilds"
-      name: "docker"
-      yaml: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: docker
-        spec:
-          containers:
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
-      yamlMergeStrategy: "override"
-      yamls:
-      - |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: docker
-        spec:
-          containers:
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
-    - id: "d387abb1-8f0d-4a2f-8cfe-2c1b8699d9c4"
-      label: "gradleContainerBuilds"
-      name: "gradle-docker"
-      yaml: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: gradle-docker
-        spec:
-          containers:
-          - name: gradle
-            image: gradle:6.8.3-jdk11
-            command:
-            - cat
-            tty: true
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
-      yamlMergeStrategy: "override"
-      yamls:
-      - |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: gradle-docker
-        spec:
-          containers:
-          - name: gradle
-            image: gradle:6.8.3-jdk11
-            command:
-            - cat
-            tty: true
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
-    - id: "6b5a0f82-223f-42ac-ad9d-ca47e00f5f29"
-      label: "mavenContainerBuilds"
-      name: "maven-docker"
-      yaml: |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: maven-docker
-        spec:
-          containers:
-          - name: maven
-            image: maven:3.8.5-openjdk-11
-            command:
-            - cat
-            tty: true
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
-      yamlMergeStrategy: "override"
-      yamls:
-      - |-
-        apiVersion: v1
-        kind: Pod
-        metadata:
-          name: maven-docker
-        spec:
-          containers:
-          - name: maven
-            image: maven:3.8.5-openjdk-11
-            command:
-            - cat
-            tty: true
-          - name: docker
-            image: docker
-            args: ["sleep", "10000"]
-            volumeMounts:
-            - mountPath: /var/run/docker.sock
-              name: docker-socket
-          restartPolicy: Never
-          volumes:
-          - name: docker-socket
-            hostPath:
-              path: /var/run/docker.sock
+# kube:
+#   podTemplatesConfiguration:
+#     templates:
+#     - id: "d7db6e35-f17d-4d01-8822-896025a528a8"
+#       label: "dockerContainerBuilds"
+#       name: "docker"
+#       yaml: |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: docker
+#         spec:
+#           containers:
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
+#       yamlMergeStrategy: "override"
+#       yamls:
+#       - |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: docker
+#         spec:
+#           containers:
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
+#     - id: "d387abb1-8f0d-4a2f-8cfe-2c1b8699d9c4"
+#       label: "gradleContainerBuilds"
+#       name: "gradle-docker"
+#       yaml: |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: gradle-docker
+#         spec:
+#           containers:
+#           - name: gradle
+#             image: gradle:6.8.3-jdk11
+#             command:
+#             - cat
+#             tty: true
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
+#       yamlMergeStrategy: "override"
+#       yamls:
+#       - |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: gradle-docker
+#         spec:
+#           containers:
+#           - name: gradle
+#             image: gradle:6.8.3-jdk11
+#             command:
+#             - cat
+#             tty: true
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
+#     - id: "6b5a0f82-223f-42ac-ad9d-ca47e00f5f29"
+#       label: "mavenContainerBuilds"
+#       name: "maven-docker"
+#       yaml: |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: maven-docker
+#         spec:
+#           containers:
+#           - name: maven
+#             image: maven:3.8.5-openjdk-11
+#             command:
+#             - cat
+#             tty: true
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
+#       yamlMergeStrategy: "override"
+#       yamls:
+#       - |-
+#         apiVersion: v1
+#         kind: Pod
+#         metadata:
+#           name: maven-docker
+#         spec:
+#           containers:
+#           - name: maven
+#             image: maven:3.8.5-openjdk-11
+#             command:
+#             - cat
+#             tty: true
+#           - name: docker
+#             image: docker
+#             args: ["sleep", "10000"]
+#             volumeMounts:
+#             - mountPath: /var/run/docker.sock
+#               name: docker-socket
+#           restartPolicy: Never
+#           volumes:
+#           - name: docker-socket
+#             hostPath:
+#               path: /var/run/docker.sock
 support:
   automatedBundleConfiguration:
     componentIds:
