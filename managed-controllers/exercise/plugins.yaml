@@ -45,7 +45,7 @@ plugins:
 - id: display-url-api
 - id: durable-task
 - id: echarts-api
-- id: email-ext
+# - id: email-ext
 - id: font-awesome-api
 - id: git
 - id: git-client
