@@ -19,7 +19,7 @@ plugins:
 - id: cloudbees-casc-shared
 - id: cloudbees-folder
 - id: cloudbees-folders-plus
-- id: cloudbees-github-reporting
+# - id: cloudbees-github-reporting
 - id: cloudbees-groovy-view
 - id: cloudbees-jenkins-advisor
 - id: cloudbees-license
@@ -49,9 +49,9 @@ plugins:
 - id: font-awesome-api
 - id: git
 - id: git-client
-- id: github
-- id: github-api
-- id: github-branch-source
+# - id: github
+# - id: github-api
+# - id: github-branch-source
 - id: gradle
 - id: gson-api
 - id: handy-uri-templates-2-api

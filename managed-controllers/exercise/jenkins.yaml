@@ -489,10 +489,10 @@ unclassified:
   fingerprints:
     fingerprintCleanupDisabled: false
     storage: "file"
-  gitHubConfiguration:
-    apiRateLimitChecker: ThrottleForNormalize
-  gitHubPluginConfig:
-    hookUrl: "http://cloudbees-core.local/exercise/github-webhook/"
+  # gitHubConfiguration:
+  #   apiRateLimitChecker: ThrottleForNormalize
+  # gitHubPluginConfig:
+  #   hookUrl: "http://cloudbees-core.local/exercise/github-webhook/"
   # globalLibraries:
   #   libraries:
   #   - defaultVersion: "main"
