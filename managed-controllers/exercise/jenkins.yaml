@@ -456,11 +456,11 @@ unclassified:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
   cloudBeesSCMReporting:
-    enabled: true
+    enabled: false # MODIFICADO
   cloudbeesPipelineExplorer:
     autoPollingEnabled: true
     autoPollingIntervalSeconds: 10
-    enabled: true
+    enabled: false # MODIFICADO
     searchMaxIndexSize: 1000
   # email-ext:
   #   adminRequiredForTemplateTesting: false
@@ -480,7 +480,7 @@ unclassified:
   #   precedenceBulk: false
   #   watchingEnabled: false
   enrichedSummaryConfig:
-    enrichedSummaryEnabled: false
+    enrichedSummaryEnabled: false 
     httpClientDelayBetweenRetriesInSeconds: 1
     httpClientMaxRetries: 3
     httpClientTimeoutInSeconds: 1
