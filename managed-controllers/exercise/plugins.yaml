@@ -1,11 +1,11 @@
 plugins:
-- id: antisamy-markup-formatter
+# - id: antisamy-markup-formatter
 - id: apache-httpcomponents-client-4-api
 - id: asm-api
 - id: authentication-tokens
-- id: aws-credentials
-- id: aws-java-sdk-ec2
-- id: aws-java-sdk-minimal
+# - id: aws-credentials
+# - id: aws-java-sdk-ec2
+# - id: aws-java-sdk-minimal
 - id: bootstrap5-api
 - id: bouncycastle-api
 - id: branch-api
@@ -48,8 +48,8 @@ plugins:
 # - id: echarts-api
 # - id: email-ext
 - id: font-awesome-api
-- id: git
-- id: git-client
+# - id: git
+# - id: git-client
 # - id: github
 # - id: github-api
 # - id: github-branch-source
@@ -72,10 +72,10 @@ plugins:
 - id: json-api
 - id: json-path-api
 - id: junit
-- id: kube-agent-management
-- id: kubernetes
-- id: kubernetes-client-api
-- id: kubernetes-credentials
+# - id: kube-agent-management
+# - id: kubernetes
+# - id: kubernetes-client-api
+# - id: kubernetes-credentials
 - id: ldap
 - id: mailer
 - id: mapdb-api
@@ -105,7 +105,7 @@ plugins:
 - id: pipeline-stage-tags-metadata
 - id: plain-credentials
 - id: plugin-util-api
-- id: prism-api
+# - id: prism-api
 - id: scm-api
 - id: script-security
 - id: snakeyaml-api
