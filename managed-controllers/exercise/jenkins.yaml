@@ -155,6 +155,9 @@ kube:
             command:
             - cat
             tty: true
+            env:
+            - name: API_SERVER_URL
+              value: http://exercise-api-gradle-dev-service.exercise-dev.svc.cluster.local:8080
           - name: docker
             image: docker
             args: ["sleep", "10000"]
@@ -180,6 +183,9 @@ kube:
             command:
             - cat
             tty: true
+            env:
+            - name: API_SERVER_URL
+              value: http://exercise-api-gradle-dev-service.exercise-dev.svc.cluster.local:8080
           - name: docker
             image: docker
             args: ["sleep", "10000"]
@@ -242,8 +248,69 @@ kube:
           - name: docker-socket
             hostPath:
               path: /var/run/docker.sock
-
-
+support:
+  automatedBundleConfiguration:
+    componentIds:
+    - "CloudBeesAssuranceSupport"
+    - "CascScmRetrieverSupport"
+    - "CloudBeesCasCUpdateLogBundlesSupport"
+    - "AgentsConfigFile"
+    - "ConfigFileComponent"
+    - "OtherConfigFilesComponent"
+    - "AboutBrowser"
+    - "AboutJenkins"
+    - "AboutUser"
+    - "AdministrativeMonitors"
+    - "AgentProtocols"
+    - "BuildQueue"
+    - "CustomLogs"
+    - "DumpExportTable"
+    - "EnvironmentVariables"
+    - "FileDescriptorLimit"
+    - "GCLogs"
+    - "HeapUsageHistogram"
+    - "ItemsContent"
+    - "AgentsJVMProcessSystemMetricsContents"
+    - "MasterJVMProcessSystemMetricsContents"
+    - "JenkinsLogs"
+    - "LoadStats"
+    - "LoggerManager"
+    - "Metrics"
+    - "NetworkInterfaces"
+    - "NodeExecutors"
+    - "NodeMonitors"
+    - "OtherLogs"
+    - "ReverseProxy"
+    - "RootCAs"
+    - "RunningBuilds"
+    - "SlaveCommandStatistics"
+    - "SlaveLaunchLogs"
+    - "SlaveLogs"
+    - "AgentsSystemConfiguration"
+    - "MasterSystemConfiguration"
+    - "SystemProperties"
+    - "TaskLogs"
+    - "ThreadDumps"
+    - "UpdateCenter"
+    - "UserCount"
+    - "ComponentImpl"
+    - "SlowRequestComponent"
+    - "HighLoadComponent"
+    - "DeadlockRequestComponent"
+    - "OperationsCenterSupportComponent"
+    - "UserActivityComponent"
+    - "PipelineInternalCalls"
+    - "PipelineTimings"
+    - "PipelineThreadDump"
+    enabled: true
+    period: 1
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+appearance:
+  prism:
+    theme: PRISM
 
 
 
