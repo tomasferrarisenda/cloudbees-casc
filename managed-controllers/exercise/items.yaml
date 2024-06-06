@@ -2,120 +2,120 @@ removeStrategy:
   rbac: SYNC
   items: NONE
 items:
-- kind: cloudbeesTemplatedJob
-  catalog: pipeline-template-catalog-container
-  name: api-gradle
-  model: pipeline-tem.lhjqlj.og-container/gradle-docker-build-deploy
-  attributes:
-  - type: boolean
-    value: true
-    key: run_tests
-  - type: credentials
-    value: github
-    key: github_creds
-  - type: string
-    value: api-gradle
-    key: name
-  - type: string
-    value: Dockerfile
-    key: dockerfiles
-  - type: string
-    value: tferrari92
-    key: docker_username
-  - type: string
-    value: api-gradle-service
-    key: github_repo
-  - type: string
-    value: tomasferrarisenda
-    key: github_organization
-- kind: cloudbeesTemplatedJob
-  catalog: pipeline-template-catalog-container
-  name: api-gradle-unit-test
-  model: pipeline-tem.lhjqlj.og-container/gradle-unit-test
-  attributes:
-  - type: credentials
-    value: github
-    key: github_creds
-  - type: string
-    value: api-gradle-unit-test
-    key: name
-  - type: string
-    value: api-gradle-service
-    key: github_repo
-  - type: string
-    value: tomasferrarisenda
-    key: github_organization
-- kind: cloudbeesTemplatedJob
-  catalog: pipeline-template-catalog-container
-  name: frontend
-  model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
-  attributes:
-  - type: credentials
-    value: github
-    key: github_creds
-  - type: string
-    value: frontend
-    key: name
-  - type: string
-    value: Dockerfile
-    key: dockerfiles
-  - type: string
-    value: tferrari92
-    key: docker_username
-  - type: string
-    value: frontend-service
-    key: github_repo
-  - type: string
-    value: tomasferrarisenda
-    key: github_organization
-- kind: cloudbeesTemplatedJob
-  catalog: pipeline-template-catalog-container
-  name: mariadb
-  model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
-  attributes:
-  - type: credentials
-    value: github
-    key: github_creds
-  - type: string
-    value: mariadb
-    key: name
-  - type: string
-    value: Dockerfile
-    key: dockerfiles
-  - type: string
-    value: tferrari92
-    key: docker_username
-  - type: string
-    value: mariadb-service
-    key: github_repo
-  - type: string
-    value: tomasferrarisenda
-    key: github_organization
+# - kind: cloudbeesTemplatedJob
+#   catalog: pipeline-template-catalog-container
+#   name: api-gradle
+#   model: pipeline-tem.lhjqlj.og-container/gradle-docker-build-deploy
+#   attributes:
+#   - type: boolean
+#     value: true
+#     key: run_tests
+#   - type: credentials
+#     value: github
+#     key: github_creds
+#   - type: string
+#     value: api-gradle
+#     key: name
+#   - type: string
+#     value: Dockerfile
+#     key: dockerfiles
+#   - type: string
+#     value: tferrari92
+#     key: docker_username
+#   - type: string
+#     value: api-gradle-service
+#     key: github_repo
+#   - type: string
+#     value: tomasferrarisenda
+#     key: github_organization
+# - kind: cloudbeesTemplatedJob
+#   catalog: pipeline-template-catalog-container
+#   name: api-gradle-unit-test
+#   model: pipeline-tem.lhjqlj.og-container/gradle-unit-test
+#   attributes:
+#   - type: credentials
+#     value: github
+#     key: github_creds
+#   - type: string
+#     value: api-gradle-unit-test
+#     key: name
+#   - type: string
+#     value: api-gradle-service
+#     key: github_repo
+#   - type: string
+#     value: tomasferrarisenda
+#     key: github_organization
+# - kind: cloudbeesTemplatedJob
+#   catalog: pipeline-template-catalog-container
+#   name: frontend
+#   model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
+#   attributes:
+#   - type: credentials
+#     value: github
+#     key: github_creds
+#   - type: string
+#     value: frontend
+#     key: name
+#   - type: string
+#     value: Dockerfile
+#     key: dockerfiles
+#   - type: string
+#     value: tferrari92
+#     key: docker_username
+#   - type: string
+#     value: frontend-service
+#     key: github_repo
+#   - type: string
+#     value: tomasferrarisenda
+#     key: github_organization
+# - kind: cloudbeesTemplatedJob
+#   catalog: pipeline-template-catalog-container
+#   name: mariadb
+#   model: pipeline-tem.lhjqlj.og-container/docker-build-deploy
+#   attributes:
+#   - type: credentials
+#     value: github
+#     key: github_creds
+#   - type: string
+#     value: mariadb
+#     key: name
+#   - type: string
+#     value: Dockerfile
+#     key: dockerfiles
+#   - type: string
+#     value: tferrari92
+#     key: docker_username
+#   - type: string
+#     value: mariadb-service
+#     key: github_repo
+#   - type: string
+#     value: tomasferrarisenda
+#     key: github_organization
 
 
-# - kind: freeStyle
-#   name: casc-sync
-#   blockBuildWhenDownstreamBuilding: false
-#   blockBuildWhenUpstreamBuilding: false
-#   builders:
-#   - shell:
-#       command: cp -R casc/* ^${JENKINS_HOME}/jcasc-bundles-store
-#   concurrentBuild: false
-#   description: Syncronizes CasC Bundles.
-#   disabled: false
-#   displayName: CasC Bundle Sync
-#   quietPeriod: 10
-#   scm:
-#     scmGit:
-#       gitTool: git
-#       userRemoteConfigs:
-#       - userRemoteConfig:
-#           url: https://github.com/joostvdg/jenkins-examples.git
-#       branches:
-#       - branchSpec:
-#           name: '*/master'
-#   scmCheckoutStrategy:
-#     standard: {}
+- kind: freeStyle
+  name: casc-sync
+  blockBuildWhenDownstreamBuilding: false
+  blockBuildWhenUpstreamBuilding: false
+  builders:
+  - shell:
+      command: cp -R casc/* ^${JENKINS_HOME}/jcasc-bundles-store
+  concurrentBuild: false
+  description: Syncronizes CasC Bundles.
+  disabled: false
+  displayName: CasC Bundle Sync
+  quietPeriod: 10
+  scm:
+    scmGit:
+      gitTool: git
+      userRemoteConfigs:
+      - userRemoteConfig:
+          url: https://github.com/joostvdg/jenkins-examples.git
+      branches:
+      - branchSpec:
+          name: '*/master'
+  scmCheckoutStrategy:
+    standard: {}
 # - kind: freeStyle
 #   name: freeStyle-test
 #   blockBuildWhenDownstreamBuilding: true
