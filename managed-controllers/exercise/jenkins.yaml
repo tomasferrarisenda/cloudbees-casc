@@ -78,6 +78,8 @@ beekeeper:
   upgrades:
     autoDowngradePlugins: false
     autoUpgradePlugins: true
+########################################################
+# THIS BREAKS THE PROVISIONING
 # globalCloudBeesPipelineTemplateCatalog:
 #   catalogs:
 #   - branchOrTag: "main"
@@ -97,6 +99,7 @@ beekeeper:
 #         - gitHubForkDiscovery:
 #             strategyId: 2
 #             trust: "gitHubTrustPermissions"
+########################################################
 kube:
   podTemplatesConfiguration:
     templates:
@@ -399,7 +402,7 @@ unclassified:
     precedenceBulk: false
     watchingEnabled: false
   enrichedSummaryConfig:
-    enrichedSummaryEnabled: false 
+    enrichedSummaryEnabled: false
     httpClientDelayBetweenRetriesInSeconds: 1
     httpClientMaxRetries: 3
     httpClientTimeoutInSeconds: 1
@@ -418,6 +421,7 @@ unclassified:
       name: "global-shared-library"
       retriever:
         modernSCM:
+          libraryPath: "."
           scm:
             github:
               configuredByUrl: true
