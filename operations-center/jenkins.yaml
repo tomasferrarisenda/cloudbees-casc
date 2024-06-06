@@ -319,7 +319,7 @@ unclassified:
             git:
               credentialsId: "github"
               id: "02ef8e73-aa8e-4937-bd32-478aca786a5e"
-              remote: "https://github.com/tomasferrarisenda/cloudbees-core-minikube-lab.git"
+              remote: "https://github.com/tomasferrarisenda/cloudbees-casc.git"
               traits:
               - "gitBranchDiscovery"
     checkOutTimeout: 600
