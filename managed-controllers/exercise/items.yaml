@@ -93,29 +93,29 @@ items:
 #     key: github_organization
 
 
-- kind: freeStyle
-  name: casc-sync
-  blockBuildWhenDownstreamBuilding: false
-  blockBuildWhenUpstreamBuilding: false
-  builders:
-  - shell:
-      command: cp -R casc/* ^${JENKINS_HOME}/jcasc-bundles-store
-  concurrentBuild: false
-  description: Syncronizes CasC Bundles.
-  disabled: false
-  displayName: CasC Bundle Sync
-  quietPeriod: 10
-  scm:
-    scmGit:
-      gitTool: git
-      userRemoteConfigs:
-      - userRemoteConfig:
-          url: https://github.com/joostvdg/jenkins-examples.git
-      branches:
-      - branchSpec:
-          name: '*/master'
-  scmCheckoutStrategy:
-    standard: {}
+# - kind: freeStyle
+#   name: casc-sync
+#   blockBuildWhenDownstreamBuilding: false
+#   blockBuildWhenUpstreamBuilding: false
+#   builders:
+#   - shell:
+#       command: cp -R casc/* ^${JENKINS_HOME}/jcasc-bundles-store
+#   concurrentBuild: false
+#   description: Syncronizes CasC Bundles.
+#   disabled: false
+#   displayName: CasC Bundle Sync
+#   quietPeriod: 10
+#   scm:
+#     scmGit:
+#       gitTool: git
+#       userRemoteConfigs:
+#       - userRemoteConfig:
+#           url: https://github.com/joostvdg/jenkins-examples.git
+#       branches:
+#       - branchSpec:
+#           name: '*/master'
+#   scmCheckoutStrategy:
+#     standard: {}
 # - kind: freeStyle
 #   name: freeStyle-test
 #   blockBuildWhenDownstreamBuilding: true
