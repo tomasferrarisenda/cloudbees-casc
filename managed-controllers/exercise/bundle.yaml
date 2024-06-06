@@ -8,5 +8,6 @@ plugins:
   - "plugins.yaml"
 items:
   - "items.yaml"
+availabilityPattern: "exercise"
 
   
