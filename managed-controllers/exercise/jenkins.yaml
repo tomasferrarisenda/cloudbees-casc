@@ -77,25 +77,25 @@ beekeeper:
   upgrades:
     autoDowngradePlugins: false
     autoUpgradePlugins: true
-# globalCloudBeesPipelineTemplateCatalog:
-#   catalogs:
-#   - branchOrTag: "main"
-#     scm:
-#       github:
-#         configuredByUrl: true
-#         credentialsId: "github"
-#         id: "0f2c6bda-7121-4285-9269-d31aa385f23d"
-#         repoOwner: "tomasferrarisenda"
-#         repository: "pipeline-template-catalogs"
-#         repositoryUrl: "https://github.com/tomasferrarisenda/pipeline-template-catalogs"
-#         traits:
-#         - gitHubBranchDiscovery:
-#             strategyId: 1
-#         - gitHubPullRequestDiscovery:
-#             strategyId: 2
-#         - gitHubForkDiscovery:
-#             strategyId: 2
-#             trust: "gitHubTrustPermissions"
+globalCloudBeesPipelineTemplateCatalog:
+  catalogs:
+  - branchOrTag: "main"
+    scm:
+      github:
+        configuredByUrl: true
+        credentialsId: "github"
+        id: "0f2c6bda-7121-4285-9269-d31aa385f23d"
+        repoOwner: "tomasferrarisenda"
+        repository: "pipeline-template-catalogs"
+        repositoryUrl: "https://github.com/tomasferrarisenda/pipeline-template-catalogs"
+        traits:
+        - gitHubBranchDiscovery:
+            strategyId: 1
+        - gitHubPullRequestDiscovery:
+            strategyId: 2
+        - gitHubForkDiscovery:
+            strategyId: 2
+            trust: "gitHubTrustPermissions"
 kube:
   podTemplatesConfiguration:
     templates:
