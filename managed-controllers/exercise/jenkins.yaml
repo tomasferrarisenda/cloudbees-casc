@@ -1,3 +1,19 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "DockerHub"
+          id: "dockerhub"
+          password: "{AQAAABAAAAAgDDocAXk91m7S9ka9+YGqMKDE0TeYAk42VytwQiT/7GiTe2sHzgoLhsbXaEpclZtk}"
+          scope: GLOBAL
+          username: "tferrari92"
+      - usernamePassword:
+          description: "GitHub"
+          id: "github"
+          password: "{AQAAABAAAAAwDC1dheGI7gCwIABu7a2RGB07gexH5/39RB8IyDsvTOrZkpLUw2rtdngH8YqGXIylUMDtJ7RVCYyhnJ7msm9nPQ==}"
+          scope: GLOBAL
+          username: "tomasferrarisenda"
 unclassified:      
   globalLibraries:
     libraries:
