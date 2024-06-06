@@ -4,14 +4,9 @@ removeStrategy:
 items:
 - kind: freeStyle
   name: sample-freestyle-job
-  # blockBuildWhenDownstreamBuilding: false
-  # blockBuildWhenUpstreamBuilding: false
-  # concurrentBuild: false
   description: sample-freestyle-job
-  # disabled: false
   displayName: sample-freestyle-job
-  # quietPeriod: 10
-  
+
 # - kind: cloudbeesTemplatedJob
 #   catalog: pipeline-template-catalog-container
 #   name: api-gradle
@@ -38,6 +33,7 @@ items:
 #   - type: string
 #     value: tomasferrarisenda
 #     key: github_organization
+
 # - kind: cloudbeesTemplatedJob
 #   catalog: pipeline-template-catalog-container
 #   name: api-gradle-unit-test
@@ -55,6 +51,7 @@ items:
 #   - type: string
 #     value: tomasferrarisenda
 #     key: github_organization
+
 # - kind: cloudbeesTemplatedJob
 #   catalog: pipeline-template-catalog-container
 #   name: frontend
@@ -78,6 +75,7 @@ items:
 #   - type: string
 #     value: tomasferrarisenda
 #     key: github_organization
+
 # - kind: cloudbeesTemplatedJob
 #   catalog: pipeline-template-catalog-container
 #   name: mariadb
