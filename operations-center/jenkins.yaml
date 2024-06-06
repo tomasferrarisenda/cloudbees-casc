@@ -335,7 +335,7 @@ unclassified:
     duration: 60
     fireAndForget: true
     initialDelay: 15
-    provisionControllerOnCreation: false # REVISAR ESTOOOOOOO
+    provisionControllerOnCreation: true # REVISAR ESTOOOOOOO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     timeout: 600
   cascItemsConfiguration:
     variableInterpolationEnabledForAdmin: false
