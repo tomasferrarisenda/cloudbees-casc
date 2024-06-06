@@ -3,13 +3,13 @@ credentials:
     domainCredentials:
     - credentials:
       - usernamePassword:
-          description: "DockerHub"
+          description: "dockerhub"
           id: "dockerhub"
           password: "{AQAAABAAAAAgDDocAXk91m7S9ka9+YGqMKDE0TeYAk42VytwQiT/7GiTe2sHzgoLhsbXaEpclZtk}"
           scope: GLOBAL
           username: "tferrari92"
       - usernamePassword:
-          description: "GitHub"
+          description: "github"
           id: "github"
           password: "{AQAAABAAAAAwDC1dheGI7gCwIABu7a2RGB07gexH5/39RB8IyDsvTOrZkpLUw2rtdngH8YqGXIylUMDtJ7RVCYyhnJ7msm9nPQ==}"
           scope: GLOBAL
@@ -32,6 +32,7 @@ jenkins:
   - name: "built-in"
   - name: "dockerContainerBuilds"
   - name: "gradleContainerBuilds"
+  - name: "gradleTests"
   - name: "mavenContainerBuilds"
   markupFormatter: "plainText"
   mode: NORMAL
@@ -84,18 +85,18 @@ beekeeper:
 #       github:
 #         configuredByUrl: true
 #         credentialsId: "github"
-#         id: "0f2c6bda-7121-4285-9269-d31aa385f23d"
+#         id: "aed68415-4e77-450b-adeb-c22869996d56"
 #         repoOwner: "tomasferrarisenda"
 #         repository: "pipeline-template-catalogs"
 #         repositoryUrl: "https://github.com/tomasferrarisenda/pipeline-template-catalogs"
-        # traits:
-        # - gitHubBranchDiscovery:
-        #     strategyId: 1
-        # - gitHubPullRequestDiscovery:
-        #     strategyId: 2
-        # - gitHubForkDiscovery:
-        #     strategyId: 2
-        #     trust: "gitHubTrustPermissions"
+#         traits:
+#         - gitHubBranchDiscovery:
+#             strategyId: 1
+#         - gitHubPullRequestDiscovery:
+#             strategyId: 2
+#         - gitHubForkDiscovery:
+#             strategyId: 2
+#             trust: "gitHubTrustPermissions"
 kube:
   podTemplatesConfiguration:
     templates:
@@ -248,6 +249,43 @@ kube:
           - name: docker-socket
             hostPath:
               path: /var/run/docker.sock
+    - id: "3cc0e5d4-faad-49e1-b687-3baa0cb128fc"
+      label: "gradleTests"
+      name: "gradle"
+      yaml: |-
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: gradle
+        spec:
+          containers:
+          - name: gradle
+            image: gradle:6.8.3-jdk11
+            command:
+            - cat
+            tty: true
+            env:
+            - name: API_SERVER_URL
+              value: http://exercise-api-gradle-dev-service.exercise-dev.svc.cluster.local:8080
+          restartPolicy: Never
+      yamlMergeStrategy: "override"
+      yamls:
+      - |-
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          name: gradle
+        spec:
+          containers:
+          - name: gradle
+            image: gradle:6.8.3-jdk11
+            command:
+            - cat
+            tty: true
+            env:
+            - name: API_SERVER_URL
+              value: http://exercise-api-gradle-dev-service.exercise-dev.svc.cluster.local:8080
+          restartPolicy: Never
 support:
   automatedBundleConfiguration:
     componentIds:
@@ -337,11 +375,11 @@ unclassified:
     variableInterpolationEnabledForAdmin: false
     variableInterpolationEnabledForNonAdmin: false
   cloudBeesSCMReporting:
-    enabled: false # MODIFICADO
+    enabled: true
   cloudbeesPipelineExplorer:
     autoPollingEnabled: true
     autoPollingIntervalSeconds: 10
-    enabled: false # MODIFICADO
+    enabled: true
     searchMaxIndexSize: 1000
   email-ext:
     adminRequiredForTemplateTesting: false
