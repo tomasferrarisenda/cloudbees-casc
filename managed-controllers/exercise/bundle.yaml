@@ -8,5 +8,5 @@ jcasc:
 #   - "plugins.yaml"
 rbac:
   - "rbac.yaml"
-items:
-  - "items.yaml"
+# items:
+#   - "items.yaml"
