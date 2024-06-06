@@ -1,11 +1,11 @@
 plugins:
-# - id: antisamy-markup-formatter
+- id: antisamy-markup-formatter
 - id: apache-httpcomponents-client-4-api
 - id: asm-api
 - id: authentication-tokens
-# - id: aws-credentials
-# - id: aws-java-sdk-ec2
-# - id: aws-java-sdk-minimal
+- id: aws-credentials
+- id: aws-java-sdk-ec2
+- id: aws-java-sdk-minimal
 - id: bootstrap5-api
 - id: bouncycastle-api
 - id: branch-api
@@ -20,7 +20,7 @@ plugins:
 - id: cloudbees-casc-shared
 - id: cloudbees-folder
 - id: cloudbees-folders-plus
-# - id: cloudbees-github-reporting
+- id: cloudbees-github-reporting
 - id: cloudbees-groovy-view
 - id: cloudbees-jenkins-advisor
 - id: cloudbees-license
@@ -45,14 +45,14 @@ plugins:
 - id: credentials-binding
 - id: display-url-api
 - id: durable-task
-# - id: echarts-api
-# - id: email-ext
+- id: echarts-api
+- id: email-ext
 - id: font-awesome-api
-# - id: git
-# - id: git-client
-# - id: github
-# - id: github-api
-# - id: github-branch-source
+- id: git
+- id: git-client
+- id: github
+- id: github-api
+- id: github-branch-source
 - id: gradle
 - id: gson-api
 - id: handy-uri-templates-2-api
@@ -72,10 +72,10 @@ plugins:
 - id: json-api
 - id: json-path-api
 - id: junit
-# - id: kube-agent-management
-# - id: kubernetes
-# - id: kubernetes-client-api
-# - id: kubernetes-credentials
+- id: kube-agent-management
+- id: kubernetes
+- id: kubernetes-client-api
+- id: kubernetes-credentials
 - id: ldap
 - id: mailer
 - id: mapdb-api
@@ -105,7 +105,7 @@ plugins:
 - id: pipeline-stage-tags-metadata
 - id: plain-credentials
 - id: plugin-util-api
-# - id: prism-api
+- id: prism-api
 - id: scm-api
 - id: script-security
 - id: snakeyaml-api
